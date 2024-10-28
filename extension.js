@@ -185,12 +185,11 @@ export default class kukemcWebhook {
         const response = await fetch(URL, options);
         this._lastStatusCode = response.status;
         this.runtime.startHatsWithParams(`${extensionId}_webHookRequestCompleted`, { parameters: { STATUS: response.status } });
-        console.log(`请求完成，状态码: ${response.status}`);
       } catch (error) {
         if (error.name === "AbortError") {
-          console.log("请求已取消");
+          // 请求被取消
         } else {
-          console.error("请求出错:", error);
+          // 其他错误
         }
       }
     } else {
