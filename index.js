@@ -40,7 +40,7 @@ window.tempExt = {
 		"kukemcWebhook.name": "Вебхук",
 		"kukemcWebhook.description":
 		  "✨Найкращий вебхук",
-		},  
+	  },  
 	    
 	},
 };
