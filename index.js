@@ -39,7 +39,7 @@ window.tempExt = {
 	  uk: {
 		"kukemcWebhook.name": "Вебхук",
 		"kukemcWebhook.description":
-		  "✨Кращий вебхук",
+		  "✨Найкращий вебхук",
 		},  
 	    
 	},
