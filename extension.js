@@ -31,6 +31,19 @@ export default class kukemcWebhook {
         "kukemcWebhook.block.getRemainingPoints": "Remaining Request Points",
         "kukemcWebhook.tip.rateLimit": "Rate limit exceeded! Try again in a few seconds.",
       },
+      uk: {
+        "kukemcWebhook.div.1": "✨ Параметри вебхуку",
+        "kukemcWebhook.div.2": "🌍 Запит вебхуку",
+        "kukemcWebhook.block.webHookRequest": "Запит вебхуку [URL]",
+        "kukemcWebhook.block.webHookRequestCompleted": "Коли запит вебхуку завершується статусом [STATUS]",
+        "kukemcWebhook.block.setHeader": "Надати заголовок запиту [KEY] до [VALUE]",
+        "kukemcWebhook.block.setMethod": "Надати метод запиту в [METHOD]",
+        "kukemcWebhook.block.setBody": "Надати тіло запиту в [BODY]",
+        "kukemcWebhook.block.checkStatus": "Перевірити чи є код статусу [CODE]",
+        "kukemcWebhook.block.cancelRequest": "Скасувати поточний запит",
+        "kukemcWebhook.block.getRemainingPoints": "??? (i will fix this soon)",
+        "kukemcWebhook.tip.rateLimit": "Ліміт швидкості перевищено! Повторіть спробу за кілька секунд.",
+      },
     });
 
     this._lastStatusCode = 0;
