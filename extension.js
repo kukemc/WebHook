@@ -41,7 +41,7 @@ export default class kukemcWebhook {
         "kukemcWebhook.block.setBody": "Надати тіло запиту в [BODY]",
         "kukemcWebhook.block.checkStatus": "Перевірити чи є код статусу [CODE]",
         "kukemcWebhook.block.cancelRequest": "Скасувати поточний запит",
-        "kukemcWebhook.block.getRemainingPoints": "??? (i will fix this soon)",
+        "kukemcWebhook.block.getRemainingPoints": "Залишок балів запиту",
         "kukemcWebhook.tip.rateLimit": "Ліміт швидкості перевищено! Повторіть спробу за кілька секунд.",
       },
     });
