@@ -51,9 +51,10 @@ export default class kukemcWebhook {
     this._method = "GET";
     this._body = "{}";
     this._controller = null;
+    this._points = 3;
+    this._rateLimitMessage = this.formatMessage("kukemcWebhook.tip.rateLimit");
 
-    this._points = 3;  // 初始点数
-    setInterval(() => {
+    this._intervalId = setInterval(() => {
       if (this._points < 3) {
         this._points++;
       }
@@ -157,7 +158,7 @@ export default class kukemcWebhook {
       blockType: Scratch.BlockType.REPORTER,
       text: this.formatMessage("kukemcWebhook.block.getRemainingPoints"),
     };
-    
+
     return {
       id: extensionId,
       name: "WebHook",
@@ -185,7 +186,7 @@ export default class kukemcWebhook {
   }
 
   async webHookRequest({ URL }) {
-    this._points--;  // 消耗一点数
+    this._points--;
     if (this._points > 0) {
       this._controller = new AbortController();
       const options = {
@@ -194,6 +195,7 @@ export default class kukemcWebhook {
         body: this._method === "GET" ? undefined : this._body,
         signal: this._controller.signal,
       };
+
       try {
         const response = await fetch(URL, options);
         this._lastStatusCode = response.status;
@@ -206,9 +208,7 @@ export default class kukemcWebhook {
         }
       }
     } else {
-      this.runtime.scratchBlocks.utils?.toast(
-        this.formatMessage("kukemcWebhook.tip.rateLimit")
-      );
+      this.runtime.scratchBlocks.utils?.toast(this._rateLimitMessage);
     }
   }
 
@@ -231,6 +231,7 @@ export default class kukemcWebhook {
   cancelRequest() {
     if (this._controller) {
       this._controller.abort();
+      this._controller = null;
     }
   }
 
