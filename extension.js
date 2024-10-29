@@ -194,6 +194,7 @@ export default class kukemcWebhook {
         headers: { "Content-Type": "application/json", ...this._headers },
         body: this._method === "GET" ? undefined : this._body,
         signal: this._controller.signal,
+        credentials: "omit",
       };
 
       try {
